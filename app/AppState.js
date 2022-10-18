@@ -1,3 +1,4 @@
+import { Jot } from "./Models/Jot.js";
 import { Value } from "./Models/Value.js";
 import { EventEmitter } from "./Utils/EventEmitter.js";
 import { isValidProp } from "./Utils/isValidProp.js";
@@ -7,11 +8,14 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Value').Value[]} */
   values = [];
 
-  /** @type {import('./Models/Title.js').Title[]} */
-  titles = [];
+  /** @type {import('./Models/Jot.js').Jot[]} */
+  jots = [];
 
-  /** @type {import('./Models/Title.js').Title | null} */
-  activeNote = null;
+  /** @type {import('./Models/Jot.js').Jot | null} */
+  activeJot = null;
+
+  /** @type {import('./Models/Jot.js').Jot[]} */
+  jotNotes = [];
 }
 
 export const ProxyState = new Proxy(new AppState(), {

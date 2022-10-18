@@ -49,24 +49,29 @@
         <div class="col-2">
           <div class="row">
             <div class="col-12">
-              <p class="fs-4">My Notes:</p>
+              <p class="fs-4">Jots:</p>
             </div>
           </div>
           <!-- STUB input new note form -->
           <div class="row">
-            <form action="" onsubmit="app.titlesController.newNote()">
-              <input class="form-control" name="title" type="text" placeholder="Note Title...">
+            <form action="" onsubmit="app.jotsController.newJot()">
+              <input class="form-control" name="title" type="text" placeholder="Jot Title...">
             </form>
           </div>
-          <div class="row" id="title">
+          <div class="row" id="jots">
             <!-- STUB Inject note title template -->
             <!-- <div class="col-12"></div> -->
           </div>
         </div>
         <div class="col-10">
-          <div class="row" id="note">
+          <div class="row" id="activeJot">
             <!-- STUB inject note body template -->
             <!-- <div class="col-12"></div> -->
+            <!-- <form action="" class="form-control" onsubmit="app.jotsController.createJotNote()">
+              <input class="form-control" name="jotNoteTitle" type="text" placeholder="Note Title">
+              <textarea class="form-control" name="jotNoteBody" id="" cols="30" rows="10" placeholder="Start your Jot..."></textarea>
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </form> -->
           </div>
         </div>
       </div>
