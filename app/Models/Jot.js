@@ -23,7 +23,7 @@ export class Jot {
     <div class="col-12">
       <p>${this.title}</p>
       <form action="" onsubmit="app.jotsController.newJotNote()">
-        <input class="form-control" name="noteTitle" type="text" value="${this.noteTitle}" placeholder="Note Title">
+        <input class="form-control" name="noteTitle" type="text" value="${this.noteTitle}" placeholder="Your Note Title">
         <textarea class="form-control" name="noteBody" id="" cols="30" rows="10" value="${this.noteBody}" placeholder="Start your Jot..."></textarea>
         <button class="btn btn-primary" type="submit">Create Note</button>
       </form>
