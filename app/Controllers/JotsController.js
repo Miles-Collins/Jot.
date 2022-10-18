@@ -1,5 +1,4 @@
 import { ProxyState } from "../AppState.js";
-import { Jot } from "../Models/Jot.js";
 import { jotsService } from "../Services/JotsService.js";
 import { Pop } from "../Utils/Pop.js";
 
@@ -18,7 +17,7 @@ function _drawActiveJot() {
   }
   // @ts-ignore
   document.getElementById("activeJot").innerHTML =
-    ProxyState.activeJot.activeJotTemplate;
+    ProxyState.activeJot.ActiveJotNoteTemplate;
 }
 
 export class JotsController {
@@ -26,6 +25,8 @@ export class JotsController {
     // console.log("Jots controller loaded");
     ProxyState.on("jots", _drawJots);
     ProxyState.on("activeJot", _drawActiveJot);
+    ProxyState.on("jotNotes", _drawActiveJot);
+
     _drawJots();
   }
 
@@ -39,6 +40,8 @@ export class JotsController {
       };
       jotsService.createJot(newJot);
       Pop.toast("Jot Created!", "success");
+      // @ts-ignore
+      form.reset();
     } catch (error) {
       console.log("new jot", error);
     }
@@ -52,20 +55,10 @@ export class JotsController {
     }
   }
 
-  newJotNote() {
-    try {
-      window.event?.preventDefault();
-      let form = window.event?.target;
-      let newJotNote = {
-        // @ts-ignore
-        noteTitle: form.noteTitle.value,
-        // @ts-ignore
-        noteBody: form.noteBody.value,
-      };
-      jotsService.createJotNote(newJotNote);
-      Pop.toast("Jot Note Created!", "success");
-    } catch (error) {
-      console.log("new jot note", error);
+  async deleteJot(id) {
+    if (await Pop.confirm()) {
+      console.log("deleting jot", id);
+      jotsService.deleteJot(id);
     }
   }
 }

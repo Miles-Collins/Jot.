@@ -1,10 +1,12 @@
 import { ProxyState } from "../AppState.js";
 import { Jot } from "../Models/Jot.js";
+import { saveState } from "../Utils/Store.js";
 
 class JotsService {
   createJot(newJot) {
     ProxyState.jots = [...ProxyState.jots, new Jot(newJot)];
     console.log("creating a new jot", ProxyState.jots);
+    saveState("jots", ProxyState.jots);
   }
 
   activeJot(selectedJot) {
@@ -16,9 +18,10 @@ class JotsService {
     console.log("active jot", ProxyState.activeJot);
   }
 
-  createJotNote(newJotNote) {
-    ProxyState.jotNotes = [...ProxyState.jotNotes, new Jot(newJotNote)];
-    console.log("creating a new jot note", ProxyState.jotNotes);
+  deleteJot(id) {
+    ProxyState.jots = ProxyState.jots.filter((j) => j.id != id);
+    // TODO reset the AppState after deleting a jot
+    ProxyState.activeJot = ProxyState.activeJot;
   }
 }
 

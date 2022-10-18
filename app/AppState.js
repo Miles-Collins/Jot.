@@ -14,7 +14,7 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Jot.js').Jot | null} */
   activeJot = null;
 
-  /** @type {import('./Models/Jot.js').Jot[]} */
+  /** @type {import('./Models/JotNote.js').JotNote[]} */
   jotNotes = [];
 }
 
