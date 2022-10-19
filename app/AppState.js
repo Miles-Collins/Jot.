@@ -8,6 +8,12 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Value').Value[]} */
   values = [];
 
+  /** @type {import('./Models/Folder.js').Folder[]} */
+  folders = [];
+
+  /** @type {import('./Models/Folder.js').Folder | null} */
+  activeFolder = null;
+
   /** @type {import('./Models/Jot.js').Jot[]} */
   jots = [];
 

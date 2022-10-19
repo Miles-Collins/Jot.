@@ -34,6 +34,7 @@ export class JotsController {
     try {
       window.event?.preventDefault();
       let form = window.event?.target;
+      // @ts-ignore
       let newJot = {
         // @ts-ignore
         title: form.title.value,

@@ -1,1 +1,31 @@
 /* BASIC STYLES HERE */
+/* .navbarHeight {
+  height: 7vh !important;
+  background-color: #d4efef !important;
+  color: #41516f !important;
+  border-bottom: 1px rgba(0, 0, 0, 0.074) solid;
+} */
+
+.leftCanvas {
+  background-color: #d3f3f3;
+  height: 100vh !important;
+  border-right: 1px rgba(0, 0, 0, 0.082) solid;
+}
+
+.lefterCanvas {
+  background-color: #0e11cfa2;
+  height: 100vh !important;
+  border-right: 1px rgba(0, 0, 0, 0.082) solid;
+}
+
+body {
+  background-color: #cdf2f1 !important;
+}
+
+.noteLog {
+  font-family: Minecraftia;
+}
+
+.folderTitle {
+  color: rgb(47, 40, 40);
+}
